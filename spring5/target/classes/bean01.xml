@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- set注入属性 -->
+    <bean id="life" class="src.model.Life" init-method="init" destroy-method="destroy">
+        <property name="name" value="Bean的生命周期"></property>
+    </bean>
+
+    <!-- 配置后置处理器，会对当前配置文件中所有的类执行后置处理器方法 -->
+    <bean id="lifePost" class="src.model.LifePost"></bean>
+</beans>
